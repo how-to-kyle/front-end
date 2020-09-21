@@ -6,9 +6,9 @@ import { useHistory } from "react-router-dom";
 
 const Login = () => {
 
-  const credentials = {username: "", password: "", error: ""}
+  const credentials = {username: "", password: ""}
   const [state, setState] = useState(credentials);
-  const { push } = useHistory();
+  const push = useHistory();
 
   const handleChanges = e => {
     e.persist();
@@ -50,7 +50,6 @@ const Login = () => {
             />
             <button>Log in</button>
           </form>
-          <p style={{ color: "red" }}>{state.error}</p>
         </div>
       </div>
   );
