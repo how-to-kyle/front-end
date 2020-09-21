@@ -29,6 +29,38 @@ Product Vision: https://docs.google.com/document/d/1OPD0t8uckw0gu-Nil6gnDdEJvxeS
 
 ## Objectives Front End 2:
 
+General Project MVP:
+  1. An on-boarding process for a new general `user` (a user that will consume the service)
+    1. Unit 1?
+
+  2. On-boarding `process` for `user` who wants to generate content (ex: organize how-to tutorials)
+    2. Unit 2?
+
+  3. On-boarding process to register:
+      1. Login Component
+        1. withAuth 
+      2. Dummy Data / Server
+      3. Testing
+
+  3. Ability to easily create / setup a `how-to guide`
+    1. VIEW (R):
+      1. Get request for how-to cards (initially just dummy data)
+      2. UI for cards
+    
+    2. CREATE (C):
+      1. Component to make new post 
+      2. Post request add posts to the array
+
+  4. Ability to easily edit / delete an a `how-to guide`
+    1. EDIT/DELETE (U)+(D):
+      1. Component to edit/delete (re-use base create component)
+      2. Get request the specific how-to quote
+      3. Add edit and delete button
+      4. Post request to update data with edited how-to
+
+  5. Ability to easily view / search / find / filter `how-to guides`
+    1. GET request w/filter (see plant project)
+
 React Application:
   MVP:
   - [] React app deployed
