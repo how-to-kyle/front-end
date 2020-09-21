@@ -39,6 +39,7 @@ General Project MVP:
   3. On-boarding process to register:
       1. Login Component
         1. withAuth 
+        2. Protected Route
       2. Dummy Data / Server
       3. Testing
 
