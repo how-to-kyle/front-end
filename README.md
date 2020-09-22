@@ -40,17 +40,25 @@ General Project MVP:
       1. Login Component
         1. withAuth 
         2. Protected Route
-      2. Dummy Data / Server
-      3. Testing
+
+        /api/register/ (POST) : adds a new user (validated, and can't already exist)
+          : Takes {email : " ", password: " " (min 8 chars)}
+
+        /api/login/ (POST) : returns a token if user is found and login is valid
 
   3. Ability to easily create / setup a `how-to guide`
     1. VIEW (R):
       1. Get request for how-to cards (initially just dummy data)
       2. UI for cards
+
+      * /api/posts/ (GET) : returns all posts
     
     2. CREATE (C):
       1. Component to make new post 
       2. Post request add posts to the array
+
+      * /api/posts/ (POST) : allows you to send over a post object in request body
+          : Takes {title: "", user_post_id: 1}
 
   4. Ability to easily edit / delete an a `how-to guide`
     1. EDIT/DELETE (U)+(D):
@@ -58,6 +66,9 @@ General Project MVP:
       2. Get request the specific how-to quote
       3. Add edit and delete button
       4. Post request to update data with edited how-to
+
+      * /api/posts/:id (PUT*) : updates a given post
+      * /api/posts/:id (DELETE*) : deletes a given post
 
   5. Ability to easily view / search / find / filter `how-to guides`
     1. GET request w/filter (see plant project)
@@ -94,3 +105,29 @@ State Management:
   - [] The system is easy to understand and use. 
   - [] Student may have also designed it in such a way that it is reusable for a lot of the state management needs of the app.
 
+Team Work:
+  MVP:
+  - [] Student's work demonstrates that all MVP features were built
+  - [] Team member was collaborative, able to work in a team environment
+  Stretch:
+  - [] Student's work demonstrates that all MVP features were built and the student went above and beyond the project.
+  - [] Pair programmed with the Web UI and Back end Architect
+
+
+Back End Decrypted:
+
+Note: Routes with * are protected and require a token
+
+/api/users/ (GET*) : returns all users
+/api/register/ (POST) : adds a new user (validated, and can't already exist)
+    : Takes {email : " ", password: " " (min 8 chars)}
+/api/login/ (POST) : returns a token if user is found and login is valid
+
+...
+
+/api/posts/ (GET) : returns all posts
+/api/posts/ (POST) : allows you to send over a post object in request body
+    : Takes {title: "", user_post_id: 1}
+/api/posts/:id (PUT*) : updates a given post
+/api/posts/:id (DELETE*) : deletes a given post
+/api/posts/:id (GET) : returns a single post
