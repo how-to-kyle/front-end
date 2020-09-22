@@ -1,24 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
+
+import PrivateRoute from './PrivateRoute';
+import { HowToContext } from './contexts/HowToContext';
 
 import Signup from './Signup';
 import Login from './Login';
+import HowToList from './HowToList';
+
+import CreateCard from './CreateCard';
+import EditCard from './EditCard';
+
 
 function AndreApp() {
+
+  const [testData, setTestData] = useState([
+    {test: "test"}
+    // {
+    //   test1: "Test1",
+    //   test1B: "Test1B"
+    // },
+    // {test1: "Test2"},
+    // {test1: "Test3"},
+  ])
+  console.log(testData);
+
+
+
   return (
     <div className="AndreApp">
 
-      <Route exact path="/">
-        <Signup className="DeleteBeforePRWithNasha" />
-      </Route>
+        <Route exact path="/">
+          <Signup />
+        </Route>
 
-      <Route exact path="/login">
-        <Login />
-      </Route>
-        
-      
-      
+        <Route exact path="/login">
+          <Login />
+        </Route>
 
+      <HowToContext.Provider value={{ testData }}>
+
+        <PrivateRoute exact path="/how-to-list">
+          <HowToList />
+        </PrivateRoute>
+
+          <PrivateRoute exact path="/how-to-list/create-card">
+            <CreateCard />
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/how-to-list/edit-card/:id">
+            <EditCard />
+          </PrivateRoute>
+
+      </HowToContext.Provider>    
     </div>
   );
 }

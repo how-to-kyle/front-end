@@ -19,7 +19,7 @@ Role Descriptions: [https://www.notion.so/0200d2f8b46345c48c1418fa1c33652c?v=995
 
 Github: [https://github.com/how-to-kyle](https://github.com/how-to-kyle)
 
-Trello: [https://trello.com/b/CdJ0Kzol/how-to-2](https://trello.com/b/CdJ0Kzol/how-to-2)
+"Trello": [https://trello.com/b/CdJ0Kzol/how-to-2](https://trello.com/b/CdJ0Kzol/how-to-2)
 
 Rubric: [https://www.notion.so/Build-Week-Rubrics-c0783f6d9b7e435f9ce47e8cd2d0ee3b](https://www.notion.so/Build-Week-Rubrics-c0783f6d9b7e435f9ce47e8cd2d0ee3b)
 
@@ -93,7 +93,7 @@ HTTP/AJAX:
   Stretch: 
   - [] Pages making HTTP requests do so in a logical manner that is cohesive with the app's state management system. 
   - [] Student showed great care and insight when handling token authentication. 
-  - [] Student used a modular stystem for all requests (e.g. useFetch custom hook)
+  - [] Student used a modular system for all requests (e.g. useFetch custom hook)
 
 State Management:
   MVP:

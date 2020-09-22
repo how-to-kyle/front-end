@@ -6,15 +6,27 @@ import { useHistory } from "react-router-dom";
 
 const Signup = () => {
 
-  const credentials = {username: "", password: ""}
-  const [state, setState] = useState(credentials);
-  const push = useHistory();
+  const [state, setState] = useState(
+    {username: "", password: ""}
+  );
+  // const credentials = {username: "", password: ""}
+  // const [state, setState] = useState(credentials);
+  const { push } = useHistory();
 
+  // this.setState = this.setState.bind(this);
+  
   const handleChanges = e => {
     e.persist();
-    setState({ ...state, [e.target.name]: e.target.value});
+    setState({ [e.target.name]: e.target.value});
   };
+  // const handleChanges = e => {
+  //   e.persist();
+  //   setState({ ...state, [e.target.name]: e.target.value});
+  // };
 
+  // this.handleChanges = this.handleChanges.bind(this);
+
+  
   const login = e => {
     e.preventDefault();
     axiosWithAuth()
@@ -22,11 +34,11 @@ const Signup = () => {
       .then(res => {
         console.log("POST res: ",res);
         localStorage.setItem("token", res.data.payload);
-        push("/protected");
+        push("/how-to-list");
       })
       .catch(err =>  { 
         console.log(err);
-        this.setState({error: "Invalid Username"})
+        setState({error: "Invalid Username"})
       });
   };
 
@@ -48,7 +60,7 @@ const Signup = () => {
               value={state.password}
               onChange={handleChanges}
             />
-            <button>Signup</button>
+              <button>Signup</button>
           </form>
         </div>
       </div>

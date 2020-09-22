@@ -22,7 +22,7 @@ const Login = () => {
       .then(res => {
         console.log("POST res: ",res);
         localStorage.setItem("token", res.data.payload);
-        push("/protected");
+        push("/how-to-list");
       })
       .catch(err =>  { 
         console.log(err);
