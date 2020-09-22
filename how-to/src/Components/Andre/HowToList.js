@@ -16,14 +16,12 @@ function HowToList(props) {
       </Link>
       {
         testData.map(howTo => (
-          <Link key={howTo.id} to={`/howToList/edit/${howTo.id}`}>
+          <Link key={howTo.id} to={`/how-to-list/edit-card/${howTo.id}`}>
             <HowToCard howTo={howTo} />
           </Link>
         ))
       }
-      <Link to="/how-to-list/edit-card" >
-        <button>Edit Card Placeholder</button>
-      </Link>
+    
     </div>
   )
 }
