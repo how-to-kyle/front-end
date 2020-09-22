@@ -18,7 +18,7 @@ const Login = () => {
   const login = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post("http://localhost:5000/api/login", state)
+      .post("https://lshowto.herokuapp.com/api/register", state)
       .then(res => {
         console.log("POST res: ",res);
         localStorage.setItem("token", res.data.payload);
