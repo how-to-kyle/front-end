@@ -2,13 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-// Delete this>>>
-import Login from './Components/Andre/Login';
+import AndreApp from './Components/Andre/AndreApp';
 
 function App() {
   return (
     <div className="App">
-      <Login className="DeleteBeforePRWithNasha" />
+      <AndreApp />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
