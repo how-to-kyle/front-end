@@ -1,70 +1,56 @@
-
 import React, { useState } from "react";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
-import { useHistory } from "react-router-dom";
-
+import { useHistory, Link } from "react-router-dom";
 
 const Signup = () => {
-
-  const [state, setState] = useState(
-    {username: "", password: ""}
-  );
-  // const credentials = {username: "", password: ""}
-  // const [state, setState] = useState(credentials);
+  const [state, setState] = useState({ email: "", password: "" });
   const { push } = useHistory();
 
-  // this.setState = this.setState.bind(this);
-  
-  const handleChanges = e => {
+  const handleChanges = (e) => {
     e.persist();
-    setState({ [e.target.name]: e.target.value});
+    setState({ ...state, [e.target.name]: e.target.value });
   };
-  // const handleChanges = e => {
-  //   e.persist();
-  //   setState({ ...state, [e.target.name]: e.target.value});
-  // };
 
-  // this.handleChanges = this.handleChanges.bind(this);
-
-  
-  const login = e => {
+  const register = (e) => {
     e.preventDefault();
     axiosWithAuth()
-      .post("/api/register", state)
-      .then(res => {
-        console.log("POST res: ",res);
-        localStorage.setItem("token", res.data.payload);
-        push("/how-to-list");
+      .post("/users/register", state)
+      .then((res) => {
+        console.log("POST res: ", res);
+        localStorage.setItem("token", res.data.token);
+        push("/login");
       })
-      .catch(err =>  { 
+      .catch((err) => {
         console.log(err);
-        setState({error: "Invalid Username"})
       });
   };
 
   return (
     <div>
       <div className="form">
-          <form onSubmit={login}>
-            <input
-              type="text"
-              name="username"
-              placeholder="LambdaSchool"
-              value={state.username}
-              onChange={handleChanges}
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="i<3Lambd4"
-              value={state.password}
-              onChange={handleChanges}
-            />
-              <button>Signup</button>
-          </form>
-        </div>
+        <form onSubmit={register}>
+          <input
+            type="email"
+            name="email"
+            placeholder="LambdaSchool"
+            value={state.email}
+            onChange={handleChanges}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="i<3Lambd4"
+            value={state.password}
+            onChange={handleChanges}
+          />
+          <button>Signup</button>
+          <Link to="/login">
+            <h6>Login</h6>
+          </Link>
+        </form>
       </div>
+    </div>
   );
-};	
+};
 
 export default Signup;

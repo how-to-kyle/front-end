@@ -19,8 +19,8 @@ function AndreApp() {
     axiosWithAuth()
       // console.log(axiosWithAuth);
       // debugger;
-      .get("/api/posts")
-      .then((res) => 
+      .get("/posts")
+      .then((res) =>
         // console.log(res)
         setTestData(res.data)
       )
@@ -29,7 +29,7 @@ function AndreApp() {
 
   return (
     <div className="AndreApp">
-      <Route exact path="/">
+      <Route exact path="/register">
         <Signup />
       </Route>
 
@@ -38,11 +38,11 @@ function AndreApp() {
       </Route>
 
       <HowToContext.Provider value={{ testData }}>
-        <PrivateRoute exact path="/how-to-list">
-          <HowToList />
-        </PrivateRoute>
+        <PrivateRoute exact path="/how-to-list" component={HowToList} />
+          {/* <HowToList />
+        </PrivateRoute> */}
 
-        <PrivateRoute exact path="/how-to-list/create-card">
+        <PrivateRoute exact path="/how-to-list/create-card" >
           <CreateCard />
         </PrivateRoute>
 

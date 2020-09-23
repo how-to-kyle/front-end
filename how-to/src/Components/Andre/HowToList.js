@@ -6,7 +6,7 @@ import { HowToContext } from './contexts/HowToContext';
 
 
 function HowToList(props) {
-  console.log(props);
+  // console.log(props);
   const { testData } = useContext(HowToContext);
 
   return(
