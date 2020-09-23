@@ -1,49 +1,46 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { axiosWithAuth } from './utils/axiosWithAuth';
-
-import { HowToContext } from './contexts/HowToContext';
+import { axiosWithAuth } from "./utils/axiosWithAuth";
 
 const CreateCard = (props) => {
-  // const [formInputs, setFormInputs] = useState({
+  const [formInputs, setFormInputs] = useState({ title: "" });
+  const history = useHistory();
 
-  // })
+  const handleChange = (e) => {
+    setFormInputs({ ...formInputs, [e.target.name]: e.target.value });
+  };
 
-  const { testData } = useContext(HowToContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axiosWithAuth()
+      .post("/posts", formInputs)
+      .then((res) => {
+        console.log(res);
+        history.push("/how-to-list");
+        setFormInputs({ title: "" });
+      })
+      .catch((err) => console.log(err));
+  };
 
-  // useEffect(() => {
-  //   axiosWithAuth()
-  //     // console.log(axiosWithAuth);
-  //     // debugger;
-  //     .post("/api/posts", formInputs)
-  //     .then((res) => 
-  //       console.log(res.data)
-        
-  //     )
-  //     .catch((err) => console.log(err));
-  // }, []);
-
-
-
-  return(
+  return (
     <div>
       <h3>CreateCardComponent</h3>
-      <div className="how-to-card">
-        {/* <form onSubmit={handleSubmit}>
-          <label htmlFor="">Title: </label>
-          <input
-            type="text"
-            name="title"
-            value={formInputs.title}
-            onChange={handleChange}
-          />
-          <Link to="/how-to-list">
-            <button>Submit</button>
-          </Link>
-        </form> */}
+      <div className="create-card">
+        <form onSubmit={handleSubmit}>
+          <label>
+            Title:
+            <input
+              type="text"
+              name="title"
+              value={formInputs.title}
+              onChange={handleChange}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default CreateCard;

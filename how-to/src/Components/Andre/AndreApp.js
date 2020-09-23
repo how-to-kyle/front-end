@@ -12,18 +12,17 @@ import CreateCard from "./CreateCard";
 import EditCard from "./EditCard";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 
+
 function AndreApp() {
   const [testData, setTestData] = useState([]);
 
   useEffect(() => {
     axiosWithAuth()
-      // console.log(axiosWithAuth);
-      // debugger;
       .get("/posts")
-      .then((res) =>
-        // console.log(res)
+      .then((res) => {
+        console.log(res.data)
         setTestData(res.data)
-      )
+      })
       .catch((err) => console.log(err));
   }, []);
 
@@ -42,9 +41,9 @@ function AndreApp() {
           {/* <HowToList />
         </PrivateRoute> */}
 
-        <PrivateRoute exact path="/how-to-list/create-card" >
-          <CreateCard />
-        </PrivateRoute>
+        <PrivateRoute exact path="/how-to-list/create-card" component={CreateCard} />
+          {/* <CreateCard />
+        </PrivateRoute> */}
 
         <PrivateRoute exact path="/how-to-list/edit-card/:id">
           <EditCard />
