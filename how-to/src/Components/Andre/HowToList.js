@@ -12,6 +12,7 @@ function HowToList(props) {
   
   return (
     <div className="howToList">
+      <a href="https://inspiring-lumiere-e68350.netlify.app/">Marketing Page</a>
       <Link to="/how-to-list/create-card">
         <button>Create a How-To</button>
       </Link>
