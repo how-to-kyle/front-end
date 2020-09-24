@@ -78,12 +78,14 @@ General Project MVP:
 
 React Application:
   MVP:
-  - [] React app deployed
-  - [] Landing page incorporated in app
+  - [x] React app deployed
+  - [x] Landing page incorporated in app
+    - https://inspiring-lumiere-e68350.netlify.app/
   Stretch: 
-  - [] Continuous deployment is set up in a manner that is conducive to a team project environment
+  - [x] Continuous deployment is set up in a manner that is conducive to a team project environment
+    - https://front-end-j9lun1m0k.vercel.app/
   - [x] Project is organized well on GitHub.
-  - [] Extra considerations were made to help all team members understand how to contribute easily to the project no matter their role (Include instructions in ReadMe)
+  - [x] Extra considerations were made to help all team members understand how to contribute easily to the project no matter their role (Include instructions in ReadMe)
 
 HTTP/AJAX: 
   MVP:

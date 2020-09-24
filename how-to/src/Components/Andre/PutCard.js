@@ -28,6 +28,13 @@ const PutCard = () => {
       .catch((err) => console.log(err.response));
   };
 
+  const deleteMovie = () => {
+    axios
+      .delete(`http://localhost:5000/api/movies/${params.id}`)
+      .then((res) => history.push("/"))
+      .catch((err) => console.log(err.response));
+  };
+
   return (
     <div className="edit-card">
       <h3>PUT PUT PUT PUT PUT </h3>
@@ -44,6 +51,10 @@ const PutCard = () => {
           Update Movie
         </button>
       </form>
+
+      <div className="delete-button" onClick={deleteMovie}>
+        Delete
+      </div>
     </div>
   );
 };
