@@ -72,6 +72,10 @@ General Project MVP:
 
   5. Ability to easily view / search / find / filter `how-to guides`
     1. GET request w/filter (see plant project)
+      1. Input
+      2. FilterState + SearchState
+      3. Handler onChange + Handler SubmitSearch
+      4. .filter + .map logic
 
   6. Stretch:
     1. Add to favorites ( See HTTP Movies Project: "SavedList")
