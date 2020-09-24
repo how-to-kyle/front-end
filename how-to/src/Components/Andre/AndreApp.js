@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 
 import PrivateRoute from "./PrivateRoute";
@@ -10,6 +10,7 @@ import HowToList from "./HowToList";
 
 import CreateCard from "./CreateCard";
 import EditCard from "./EditCard";
+import PutCard from './PutCard';
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 
 
@@ -20,7 +21,7 @@ function AndreApp() {
     axiosWithAuth()
       .get("/posts")
       .then((res) => {
-        console.log(res.data)
+        console.log('Andre App Main Posts Data', res.data)
         setTestData(res.data)
       })
       .catch((err) => console.log(err));
@@ -38,16 +39,13 @@ function AndreApp() {
 
       <HowToContext.Provider value={{ testData }}>
         <PrivateRoute exact path="/how-to-list" component={HowToList} />
-          {/* <HowToList />
-        </PrivateRoute> */}
 
         <PrivateRoute exact path="/how-to-list/create-card" component={CreateCard} />
-          {/* <CreateCard />
-        </PrivateRoute> */}
 
-        <PrivateRoute exact path="/how-to-list/edit-card/:id">
-          <EditCard />
-        </PrivateRoute>
+        <PrivateRoute exact path="/how-to-list/put-card/:id" component={PutCard} />
+         
+
+
       </HowToContext.Provider>
     </div>
   );

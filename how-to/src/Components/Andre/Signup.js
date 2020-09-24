@@ -22,6 +22,7 @@ const Signup = () => {
       })
       .catch((err) => {
         console.log(err);
+        alert('Existing user already exists. Please login.')
       });
   };
 

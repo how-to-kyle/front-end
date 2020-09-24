@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
-import { useHistory, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 
 const CreateCard = (props) => {
