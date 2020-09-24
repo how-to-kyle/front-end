@@ -1,58 +1,59 @@
-
 import React, { useState } from "react";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
-import { useHistory } from "react-router-dom";
-
+import { useHistory, Link } from "react-router-dom";
 
 const Login = () => {
+  // const credentials = { email: "", password: "" };
+  // const [state, setState] = useState(credentials);
+  const [state, setState] = useState({ email: "", password: "" });
+  const { push } = useHistory();
 
-  const credentials = {username: "", password: ""}
-  const [state, setState] = useState(credentials);
-  const push = useHistory();
-
-  const handleChanges = e => {
+  const handleChanges = (e) => {
     e.persist();
-    setState({ ...state, [e.target.name]: e.target.value});
+    setState({ ...state, [e.target.name]: e.target.value });
   };
 
-  const login = e => {
+  const login = (e) => {
     e.preventDefault();
     axiosWithAuth()
-      .post("https://lshowto.herokuapp.com/api/register", state)
-      .then(res => {
-        console.log("POST res: ",res);
-        localStorage.setItem("token", res.data.payload);
-        push("/protected");
+      .post("/users/login", state)
+      .then((res) => {
+        console.log("POST res: ", res);
+
+        localStorage.setItem("token", res.data.token);
+        push("/how-to-list");
       })
-      .catch(err =>  { 
+      .catch((err) => {
         console.log(err);
-        this.setState({error: "Invalid Username"})
       });
   };
 
   return (
     <div>
       <div className="form">
-          <form onSubmit={login}>
-            <input
-              type="text"
-              name="username"
-              placeholder="LambdaSchool"
-              value={state.username}
-              onChange={handleChanges}
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="i<3Lambd4"
-              value={state.password}
-              onChange={handleChanges}
-            />
-            <button>Log in</button>
-          </form>
-        </div>
+        <form onSubmit={login}>
+          <input
+            type="email"
+            name="email"
+            placeholder="LambdaSchool"
+            value={state.email}
+            onChange={handleChanges}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="i<3Lambd4"
+            value={state.password}
+            onChange={handleChanges}
+          />
+          <button>Log in</button>
+          <Link to="/register">
+            <h6>Signup</h6>
+          </Link>
+        </form>
       </div>
+    </div>
   );
-};	
+};
 
 export default Login;
