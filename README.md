@@ -89,13 +89,13 @@ React Application:
 
 HTTP/AJAX: 
   MVP:
-  - [] CRUD operations drive the application. 
-  - [] Each participating student individually created pages that complete all CRUD operations. 
+  - [x] CRUD operations drive the application. 
+  - [x] Each participating student individually created pages that complete all CRUD operations. 
   - [x] Token authentication is handled correctly.
   Stretch: 
-  - [] Pages making HTTP requests do so in a logical manner that is cohesive with the app's state management system. 
+  - [x] Pages making HTTP requests do so in a logical manner that is cohesive with the app's state management system. 
   - [x] Student showed great care and insight when handling token authentication. 
-  - [] Student used a modular system for all requests (e.g. useFetch custom hook)
+  - [x] Student used a modular system for all requests (e.g. useFetch custom hook)
 
 State Management:
   MVP:
@@ -109,10 +109,10 @@ State Management:
 
 Team Work:
   MVP:
-  - [] Student's work demonstrates that all MVP features were built
+  - [x] Student's work demonstrates that all MVP features were built
   - [x] Team member was collaborative, able to work in a team environment
   Stretch:
-  - [] Student's work demonstrates that all MVP features were built and the student went above and beyond the project.
+  - [x] Student's work demonstrates that all MVP features were built and the student went above and beyond the project.
   - [x] Pair programmed with the Web UI and Back end Architect
 
 

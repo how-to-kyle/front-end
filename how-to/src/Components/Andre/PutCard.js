@@ -29,9 +29,9 @@ const PutCard = () => {
   };
 
   const deleteMovie = () => {
-    axios
-      .delete(`http://localhost:5000/api/movies/${params.id}`)
-      .then((res) => history.push("/"))
+    axiosWithAuth()
+      .delete(`posts/${id}`)
+      .then((res) => history.push("/how-to-list/posts"))
       .catch((err) => console.log(err.response));
   };
 
@@ -52,9 +52,9 @@ const PutCard = () => {
         </button>
       </form>
 
-      <div className="delete-button" onClick={deleteMovie}>
+      <button className="delete-button" onClick={deleteMovie}>
         Delete
-      </div>
+      </button>
     </div>
   );
 };
