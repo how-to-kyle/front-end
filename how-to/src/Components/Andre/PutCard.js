@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 
@@ -28,6 +28,13 @@ const PutCard = () => {
       .catch((err) => console.log(err.response));
   };
 
+  const deleteMovie = () => {
+    axiosWithAuth()
+      .delete(`posts/${id}`)
+      .then((res) => history.push("/how-to-list/posts"))
+      .catch((err) => console.log(err.response));
+  };
+
   return (
     <div className="edit-card">
       <h3>PUT PUT PUT PUT PUT </h3>
@@ -44,6 +51,10 @@ const PutCard = () => {
           Update Movie
         </button>
       </form>
+
+      <button className="delete-button" onClick={deleteMovie}>
+        Delete
+      </button>
     </div>
   );
 };

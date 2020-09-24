@@ -72,28 +72,34 @@ General Project MVP:
 
   5. Ability to easily view / search / find / filter `how-to guides`
     1. GET request w/filter (see plant project)
+      1. Input
+      2. FilterState + SearchState
+      3. Handler onChange + Handler SubmitSearch
+      4. .filter + .map logic
 
   6. Stretch:
     1. Add to favorites ( See HTTP Movies Project: "SavedList")
 
 React Application:
   MVP:
-  - [] React app deployed
-  - [] Landing page incorporated in app
+  - [x] React app deployed
+  - [x] Landing page incorporated in app
+    - https://inspiring-lumiere-e68350.netlify.app/
   Stretch: 
-  - [] Continuous deployment is set up in a manner that is conducive to a team project environment
+  - [x] Continuous deployment is set up in a manner that is conducive to a team project environment
+    - https://front-end-j9lun1m0k.vercel.app/
   - [x] Project is organized well on GitHub.
-  - [] Extra considerations were made to help all team members understand how to contribute easily to the project no matter their role (Include instructions in ReadMe)
+  - [x] Extra considerations were made to help all team members understand how to contribute easily to the project no matter their role (Include instructions in ReadMe)
 
 HTTP/AJAX: 
   MVP:
-  - [] CRUD operations drive the application. 
-  - [] Each participating student individually created pages that complete all CRUD operations. 
+  - [x] CRUD operations drive the application. 
+  - [x] Each participating student individually created pages that complete all CRUD operations. 
   - [x] Token authentication is handled correctly.
   Stretch: 
-  - [] Pages making HTTP requests do so in a logical manner that is cohesive with the app's state management system. 
+  - [x] Pages making HTTP requests do so in a logical manner that is cohesive with the app's state management system. 
   - [x] Student showed great care and insight when handling token authentication. 
-  - [] Student used a modular system for all requests (e.g. useFetch custom hook)
+  - [x] Student used a modular system for all requests (e.g. useFetch custom hook)
 
 State Management:
   MVP:
@@ -107,10 +113,10 @@ State Management:
 
 Team Work:
   MVP:
-  - [] Student's work demonstrates that all MVP features were built
+  - [x] Student's work demonstrates that all MVP features were built
   - [x] Team member was collaborative, able to work in a team environment
   Stretch:
-  - [] Student's work demonstrates that all MVP features were built and the student went above and beyond the project.
+  - [x] Student's work demonstrates that all MVP features were built and the student went above and beyond the project.
   - [x] Pair programmed with the Web UI and Back end Architect
 
 

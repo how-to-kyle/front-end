@@ -9,7 +9,7 @@ import Login from "./Login";
 import HowToList from "./HowToList";
 
 import CreateCard from "./CreateCard";
-import EditCard from "./EditCard";
+// import EditCard from "./EditCard";
 import PutCard from './PutCard';
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 
